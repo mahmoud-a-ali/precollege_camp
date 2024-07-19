@@ -1,0 +1,2 @@
+ 'send_cmd_vel = turtlebot3_teleop.script.send_cmd_vel:main',
+ 'obstacle_direction = turtlebot3_teleop.script.obstacle_directionl:main' 
