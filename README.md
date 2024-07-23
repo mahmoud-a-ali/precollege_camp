@@ -120,6 +120,7 @@ Learn how to:
    ```bash
    ros2 run turtlebot3_teleop obstacle_direction
    ```
-3. Check the code for the `obstacle_direction` node and try to also print the obstacle distance from the robot.
+   - This will print the direction to the nearest obstacle to the robot.
+3. Check the code of the `obstacle_direction` node and try to print the `distance` to the nearest obstacle from the robot.
 
 
