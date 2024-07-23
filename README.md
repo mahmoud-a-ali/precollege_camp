@@ -11,7 +11,7 @@ Learn how to:
 - Detect obstacles using lidar.
 
 
-### First tutorial: run the simulator, visualize data, and control robot using keyboard:
+### First tutorial: run the simulator, check ros nodes and topics visualize data, and control robot using keyboard:
 1. Open a terminal window by pressing `Ctrl+Alt+t`
 2. Clone this repository into your PC
    ```bash
@@ -21,24 +21,39 @@ Learn how to:
    ```bash
    cd precollege_camp
    ```
-5. Make the bash script files executables
+4. Make the bash script files executables
    ```bash
    chmod +x create_turtlebot_sim.sh source_turtlebot_sim.sh
    ```
-6. Run `create_turtlebot_sim.sh` to create the simulation workspace `turtlebot_sim`
+5. Run `create_turtlebot_sim.sh` to create the simulation workspace `turtlebot_sim`
    ```bash
    source create_turtlebot_sim.sh
    ```
    - This script does the following: create a `turtlebot_sim` workspace, download required packages, compile the workspace, source the environment, and run the empty `gazebo` world with a `burger` turtlebots.
   
-7. Open a new terminal tab by pressing `Ctrl+Shift+t`, we will call this tab the `keyboard_tab`.
-8. Source the simulation environment
+6. Open a new terminal tab by pressing `Ctrl+Shift+t`, source the workspace, and run `rqt_graph` to visualize robot nodes and topics
+ ```bash
+ cd
+ cd precollege_camp
+ source source_turtlebot_sim.sh
+ rqt_graph
+ ```
+7. Open a new terminal tab by pressing `Ctrl+Shift+t`, source the workspace, and run `rviz2` to visualize the robot, the robot's path, and the laser scanner data
+  ```bash
+  cd
+  cd precollege_camp
+  source source_turtlebot_sim.sh
+  rviz2
+  ```
+### Second tutorial: control the robot using the keyboard
+1. Open a new terminal tab by pressing `Ctrl+Shift+t`, we will call this tab the `keyboard_tab`.
+2. Source the simulation environment
    ```bash
    cd
    cd precollege_camp
    source source_turtlebot_sim.sh
    ```
-   - This is equivalent to
+   - This is equivalent to: "Don't Run the following command!"
      ```bash
      source /opt/ros/humble/setup.bash
      export TURTLEBOT3_MODEL=burger
@@ -49,25 +64,11 @@ Learn how to:
   ```bash
   ros2 run turtlebot3_teleop teleop_keyboard 
   ```
-10. Open a new terminal tab by pressing `Ctrl+Shift+t`, source the workspace, and run `rqt_graph` to visualize robot nodes and topics (`rqt_tab`)
- ```bash
- cd
- cd precollege_camp
- source source_turtlebot_sim.sh
- rqt_graph
- ```
-12. Open a new terminal tab by pressing `Ctrl+Shift+t`, source the workspace, and run `rviz2` to visualize the robot, the robot's path, and the laser scanner data(`rviz_tab`)
-  ```bash
-  cd
-  cd precollege_camp
-  source source_turtlebot_sim.sh
-  rviz2
-  ```
 14. In the `keyboard_tab`, where `teleop_key` is running you can control the robot by pressing `w`, `a`, `d`, `x`, and `s` letters.
-15. Check robot motion and robot path in `rviz2`.
+15. Check the robot's motion and its path in `rviz2`.
 16. Use `s` to stop the robot before starting the next tutorial.
     
-### Second tutorial: try different ways to control the robot 
+### Third tutorial: command the robot to go to a specific XY position
 1. Open a new terminal tab by pressing `Ctrl+Shift+t`, source the workspace, and run `position_control` to command the robot to go to a specific XY position (`velocity_tab`)
    ```bash
    cd
@@ -75,10 +76,17 @@ Learn how to:
    source source_turtlebot_sim.sh
    ros2 run turtlebot3_example turtlebot3_position_control
    ```
+   - enter the following values to test it:
+   ```bash
+   Input x: 2
+   Input y: 0
+   Input theta: 0
+   ```
 2. Command the robot to go to different XY positions in the environment.
 3. Close the `position_control` node by pressing `ctrl+c`
-4. Now let's add a new way to control the robot, add the two Python scripts `send_cmd_vel.py` and `obstacle_direction.py` to the `turtlebot3_teleop` package in the script folder `/turtlebot_sim/src/turtlebot3/turtlebot3_teleop/turtlebot3_teleop/script`
-5. Add the two lines in `setup_update.txt` to the 'setup.py' file of the `turtlebot3_teleop` package under the line containing `console_scripts`
+### Fourth tutorial: control the robot using specific linear and angular velocities
+1. add the two Python scripts `send_cmd_vel.py` and `obstacle_direction.py` to the `turtlebot3_teleop` package in the script folder `/turtlebot_sim/src/turtlebot3/turtlebot3_teleop/turtlebot3_teleop/script`
+2. Add the two lines in `setup_update.txt` to the 'setup.py' file of the `turtlebot3_teleop` package under the line containing `console_scripts`
    ```
    'console_scripts': [
         'teleop_keyboard = turtlebot3_teleop.script.teleop_keyboard:main',
@@ -86,18 +94,27 @@ Learn how to:
        'obstacle_direction = turtlebot3_teleop.script.obstacle_direction:main'
    ],
    ```
-7. compile and source the workspace again
+3. compile and source the workspace again
    ```bash
    colcon build
    source install/setup.bash
    ```
-8. Run the new `send_cmd_vel` node
+4. Run the new `send_cmd_vel` node
    ```bash
    ros2 run turtlebot3_teleop send_cmd_vel
    ```
-9. Try different combinations of linear and angular velocities to move the robot, for example, to move the robot in a straight line, or a circle in clockwise and counter-clockwise directions.
-10. Close the `send_cmd_vel` node using `ctrl+c`
-### Third tutorial: detect obstacle direction using a laser scanner
+   - enter the following values to test it:
+   ```bash
+   Input Linear: 0.5
+   Input Angular: 0.5
+   ```
+5. Close the `send_cmd_vel` node using `ctrl+c`
+6. Rerun the same node again, this time try different combinations of linear and angular velocities to move the robot in a straight line, or a circle in clockwise and counter-clockwise directions.
+   ```bash
+   ros2 run turtlebot3_teleop send_cmd_vel
+   ```
+7. Close the `send_cmd_vel` node using `ctrl+c`
+### Fifth tutorial: detect obstacle direction using a laser scanner
 1. Add obstacles to the environment such as boxes, cylinders, or spheres.
 2. In the `velocity_tab`, run the `obstacle_direction` node
    ```bash
