@@ -30,6 +30,10 @@ Learn how to:
    source create_turtlebot_sim.sh
    ```
    - This script does the following: create a `turtlebot_sim` workspace, download required packages, compile the workspace, source the environment, and run the empty `gazebo` world with a `burger` turtlebots.
+   - If the robot doesn't show up, close the script using `ctrl+c`, and then run the simulator using:
+     ```bash
+     ros2 launch turtlebot3_gazebo empty_world.launch.py
+     ```
   
 6. Open a new terminal tab by pressing `Ctrl+Shift+t`, source the workspace, and run `rqt_graph` to visualize robot nodes and topics
  ```bash
@@ -120,6 +124,15 @@ Learn how to:
    ```bash
    ros2 run turtlebot3_teleop obstacle_direction
    ```
+### Try new environments:
+```bash
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+```
+or
+```bash
+ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py
+```
+
    - This will print the direction to the nearest obstacle to the robot.
 3. Check the code of the `obstacle_direction` node and try to print the `distance` to the nearest obstacle from the robot.
 
