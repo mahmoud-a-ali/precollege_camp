@@ -13,22 +13,23 @@ Learn how to:
 
 ### First tutorial: run the simulator, check ros nodes and topics visualize data, and control robot using keyboard:
 1. Open a terminal window by pressing `Ctrl+Alt+t`
-2.    ```bash
+2. remove previous folder
+    ```bash
    rm -r precollege_camp
    ```
-3. Clone this repository into your PC
+4. Clone this repository into your PC
    ```bash
    git clone https://github.com/mahmoud-a-ali/precollege_camp.git
    ```
-4. Go to the cloned directory
+5. Go to the cloned directory
    ```bash
    cd precollege_camp
    ```
-5. Make the bash script files executables
+6. Make the bash script files executables
    ```bash
    chmod +x create_turtlebot_sim.sh source_turtlebot_sim.sh
    ```
-6. Run `create_turtlebot_sim.sh` to create the simulation workspace `turtlebot_sim`
+7. Run `create_turtlebot_sim.sh` to create the simulation workspace `turtlebot_sim`
    ```bash
    source create_turtlebot_sim.sh
    ```
@@ -38,7 +39,7 @@ Learn how to:
      ros2 launch turtlebot3_gazebo empty_world.launch.py
      ```
   
-7. Open a new terminal tab by pressing `Ctrl+Shift+t`, source the workspace, and run `rqt_graph` to visualize robot nodes and topics
+8. Open a new terminal tab by pressing `Ctrl+Shift+t`, source the workspace, and run `rqt_graph` to visualize robot nodes and topics
  ```bash
  cd
  cd precollege_camp
