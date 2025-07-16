@@ -1,7 +1,7 @@
 # Description
 
-Introduction to ROS and the Gazebo Robot Simulator for students. 
-We will start with a 10-minute introduction to ROS packages, nodes, and topics. Then, the students will be running a gazebo simulator and commanding a turtlebot3 robot to do different types of motion.
+Introduction to ROS2 and the Gazebo Robot Simulator for students. 
+We will start with a 10-minute introduction to ROS2 packages, nodes, and topics. Then, the students will be running a gazebo simulator and commanding a turtlebot3 robot to do different types of motion.
 
 ## Learning Outcomes
 Learn how to:
@@ -11,7 +11,7 @@ Learn how to:
 - Detect obstacles using lidar.
 
 
-### First tutorial: run the simulator, check ros nodes and topics visualize data, and control robot using keyboard:
+### First tutorial: run the simulator, check ros2 nodes and topics visualize data, and control robot using keyboard:
 1. Open a terminal window by pressing `Ctrl+Alt+t`
 2. remove previous folder
     ```bash
