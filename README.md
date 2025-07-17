@@ -17,6 +17,9 @@ Learn how to:
     ```bash
    rm -r precollege_camp
    ```
+    ```bash
+   rm -r turtlebot_sim2
+   ```
 4. Clone this repository into your PC
    ```bash
    git clone https://github.com/mahmoud-a-ali/precollege_camp.git
