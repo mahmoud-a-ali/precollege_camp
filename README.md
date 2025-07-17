@@ -82,7 +82,7 @@ Learn how to:
    cd
    cd precollege_camp
    source source_turtlebot_sim.sh
-   ros2 run turtlebot3_example turtlebot3_position_control
+   ros2 run turtlebot3_example turtlebot3_absolute_move
    ```
    - enter the following values to test it:
    ```bash
