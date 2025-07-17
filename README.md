@@ -111,6 +111,8 @@ Learn how to:
    ```
    ```bash
    colcon build
+    ```
+   ```bash
    source install/setup.bash
    ```
 5. Run the new `send_cmd_vel` node
