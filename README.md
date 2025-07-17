@@ -96,6 +96,12 @@ Learn how to:
 2. Command the robot to go to different XY positions in the environment.
 3. Close the `position_control` node by pressing `ctrl+c`
 ### Fourth tutorial: control the robot using specific linear and angular velocities
+1. Open new terminal Tab, and source the workspace
+   ```bash
+   cd
+    cd precollege_camp
+    source source_turtlebot_sim.sh
+    ```
 1. add the two Python scripts `send_cmd_vel.py` and `obstacle_direction.py` to the `turtlebot3_teleop` package in the script folder `/turtlebot_sim/src/turtlebot3/turtlebot3_teleop/turtlebot3_teleop/script`
 2. Add the two lines in `setup_update.txt` to the 'setup.py' file of the `turtlebot3_teleop` package under the line containing `console_scripts`
    ```
@@ -106,9 +112,6 @@ Learn how to:
    ],
    ```
 3. compile and source the workspace again
-   ```bash
-   source /opt/ros/humble/setup.bash
-   ```
    ```bash
    colcon build
     ```
