@@ -107,10 +107,13 @@ Learn how to:
    ```
 3. compile and source the workspace again
    ```bash
+   source /opt/ros/humble/setup.bash
+   ```
+   ```bash
    colcon build
    source install/setup.bash
    ```
-4. Run the new `send_cmd_vel` node
+5. Run the new `send_cmd_vel` node
    ```bash
    ros2 run turtlebot3_teleop send_cmd_vel
    ```
@@ -119,12 +122,12 @@ Learn how to:
    Input Linear: 0.5
    Input Angular: 0.5
    ```
-5. Close the `send_cmd_vel` node using `ctrl+c`
-6. Rerun the same node again, this time try different combinations of linear and angular velocities to move the robot in a straight line, or a circle in clockwise and counter-clockwise directions.
+6. Close the `send_cmd_vel` node using `ctrl+c`
+7. Rerun the same node again, this time try different combinations of linear and angular velocities to move the robot in a straight line, or a circle in clockwise and counter-clockwise directions.
    ```bash
    ros2 run turtlebot3_teleop send_cmd_vel
    ```
-7. Close the `send_cmd_vel` node using `ctrl+c`
+8. Close the `send_cmd_vel` node using `ctrl+c`
 ### Fifth tutorial: detect obstacle direction using a laser scanner
 1. Add obstacles to the environment such as boxes, cylinders, or spheres.
 2. In the `velocity_tab`, run the `obstacle_direction` node
