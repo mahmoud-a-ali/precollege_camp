@@ -21,7 +21,7 @@ class ScanSubscriber(Node):
         min_distance = np.nanmin(self.scan_ranges)
         min_distance_index = np.nanargmin(self.scan_ranges)
         min_distance_angle = np.degrees(min_distance_index * msg.angle_increment + msg.angle_min)
-        self.get_logger().info(f'Distance to nearest obstacle: ?? m at {min_distance_angle:.2f} degrees')
+        self.get_logger().info(f'Distance to nearest obstacle: {min_distance:.2f} m at {min_distance_angle:.2f} degrees')
 
 def main(args=None):
     rclpy.init(args=args)
