@@ -15,10 +15,10 @@ Learn how to:
 1. Open a terminal window by pressing `Ctrl+Alt+t`
 2. remove previous folder
     ```bash
-   rm -r precollege_camp
+   rm -rf precollege_camp
    ```
     ```bash
-   rm -r turtlebot_sim2
+   rm -rf turtlebot_sim2
    ```
 4. Clone this repository into your PC
    ```bash
